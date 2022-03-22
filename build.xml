@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<project name="Open a web browser" default="open">
+
+   <property name="browserName" value=""/>
+
+   <condition property="browserPath" value="C:\Program Files\Google\Chrome\Application\chrome.exe"
+         else=<condition property="browserPath" value="C:\Program Files (x86)\Microsoft\Edge\Application" else="C:\Program Files\Internet Explorer\iexplore.exe">
+
+        <equals arg1="${browserName}" arg2="edge"/>
+
+        </condition>>
+
+      <equals arg1="${browserName}" arg2="chrome"/>
+
+   </condition>
+
+   <target name="open" if="browserPath">
+
+      <exec executable="${browserPath}"/>
+
+   </target>
+
+</project>
