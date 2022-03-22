@@ -1,7 +1,33 @@
-<?xml version="1.0"?>
+<project name="demo" basedir="." xmlns:sf="antlib:com.salesforce" default="start">
 
-<project name="faltuu">
+   <!--<property environment="env"/>-->
 
-   <echo> this is a message </echo>
-   
+   <taskdef resource="net/sf/antcontrib/antlib.xml" classpath="ant-contrib-1.0b3.jar"/>
+
+   <target name="start">
+
+      <switch value="${browserName}">
+
+         <case value="chrome">
+
+            <exec executable="C:\Program Files\Google\Chrome\Application\chrome.exe"/>
+
+         </case>
+
+         <case value="iexplore">
+
+            <exec executable="C:\Program Files\Internet Explorer\iexplore.exe"/>
+
+         </case>
+
+         <default>
+
+            <exec executable="C:\Program Files\Google\Chrome\Application\chrome.exe"/>
+
+         </default>
+
+       </switch>
+
+   </target>
+
 </project>
